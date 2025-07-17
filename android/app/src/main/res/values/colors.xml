@@ -1,0 +1,5 @@
+<resources>
+    <color name="com_facebook_button_background_color_focused_disabled">#dddddd</color>
+    <color name="com_facebook_button_background_color_focused">#3c5f9f</color>
+    <color name="com_facebook_button_border_color_focused">#185aa9</color>
+</resources>

@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "885039416228",
+    "project_id": "socialmedia-7c054",
+    "storage_bucket": "socialmedia-7c054.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885039416228:android:88de4c3639a912169ef731",
+        "android_client_info": {
+          "package_name": "com.neilb.socialite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885039416228-jrovg5u1i7scod5im9tcm1qt2i8ikm8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3uRotz985DzZrwweAbH63GvYFucQ1Aew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885039416228-jrovg5u1i7scod5im9tcm1qt2i8ikm8q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885039416228-cip8nj2mfnp192r9a4ouesgc94nildj3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prokit.socialv.prokitSocialv"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:885039416228:android:46b9306ddf9f93f19ef731",
+        "android_client_info": {
+          "package_name": "com.prokit.socialv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "885039416228-39u6keasgi50plkfck0uib48o11gpaid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prokit.socialv",
+            "certificate_hash": "82e34e05ac1e93814ed468abb7608a6b42f17e4e"
+          }
+        },
+        {
+          "client_id": "885039416228-i8kcfdmlo5aloc289cicv1cqgks3tqk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prokit.socialv",
+            "certificate_hash": "670da38493e3c53e5e4eea330c3e019bfc4a8802"
+          }
+        },
+        {
+          "client_id": "885039416228-jrovg5u1i7scod5im9tcm1qt2i8ikm8q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3uRotz985DzZrwweAbH63GvYFucQ1Aew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "885039416228-jrovg5u1i7scod5im9tcm1qt2i8ikm8q.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "885039416228-cip8nj2mfnp192r9a4ouesgc94nildj3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prokit.socialv.prokitSocialv"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
