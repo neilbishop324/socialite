@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
@@ -25,7 +27,25 @@ void main() async {
   MobileAds.instance.initialize();
   runApp(const MyApp());
   const topic = 'app_promotion';
-  await FirebaseMessaging.instance.subscribeToTopic(topic);
+  final _firebaseMessaging = FirebaseMessaging.instance;
+  if (Platform.isIOS) {
+    String? apnsToken = await _firebaseMessaging.getAPNSToken();
+    if (apnsToken != null) {
+      await _firebaseMessaging.subscribeToTopic(topic);
+    } else {
+      await Future<void>.delayed(
+        const Duration(
+          seconds: 3,
+        ),
+      );
+      apnsToken = await _firebaseMessaging.getAPNSToken();
+      if (apnsToken != null) {
+        await _firebaseMessaging.subscribeToTopic(topic);
+      }
+    }
+  } else {
+    await _firebaseMessaging.subscribeToTopic(topic);
+  }
 }
 
 class MyApp extends StatefulWidget {

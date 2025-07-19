@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -8,6 +7,7 @@ import 'package:nb_utils/nb_utils.dart';
 import 'package:prokit_socialv/model/SVUser.dart';
 import 'package:prokit_socialv/utils/Translations.dart';
 import 'dart:math';
+import 'package:csc_picker_plus/csc_picker_plus.dart';
 
 import '../main.dart';
 
@@ -138,7 +138,7 @@ class Extensions {
                             child: Column(
                               children: [
                                 ///Adding CSC Picker Widget in app
-                                CSCPicker(
+                                CSCPickerPlus(
                                   ///Enable disable state dropdown [OPTIONAL PARAMETER]
                                   showStates: true,
 

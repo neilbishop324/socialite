@@ -25,7 +25,7 @@ class AppTheme {
       primary: SVAppColorPrimary,
       error: Colors.red,
     ),
-    cardTheme: CardTheme(color: Colors.white),
+    cardTheme: CardThemeData(color: Colors.white),
     cardColor: SVAppSectionBackground,
     iconTheme: IconThemeData(color: textPrimaryColor),
     bottomSheetTheme: BottomSheetThemeData(backgroundColor: whiteColor),
@@ -65,7 +65,7 @@ class AppTheme {
     primaryTextTheme: TextTheme(
         displaySmall: primaryTextStyle(color: Colors.white),
         titleLarge: primaryTextStyle(color: Colors.white)),
-    cardTheme: CardTheme(color: cardBackgroundBlackDark),
+    cardTheme: CardThemeData(color: cardBackgroundBlackDark),
     cardColor: cardBackgroundBlackDark,
     iconTheme: IconThemeData(color: whiteColor),
     textTheme: TextTheme(

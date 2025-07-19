@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:background_fetch/background_fetch.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -115,13 +117,42 @@ class MessageService {
   }
 
   void getTokenAndSaveIt() async {
-    messaging.getToken().then((token) => {
-          print("userToken: $token"),
-          FirestoreService().setData(
-              CollectionPath().tokens,
-              AuthService().getUid(),
-              {"token": token, "id": AuthService().getUid()})
-        });
+    if (Platform.isIOS) {
+      String? apnsToken = await messaging.getAPNSToken();
+      if (apnsToken != null) {
+        messaging.getToken().then((token) => {
+              print("userToken: $token"),
+              FirestoreService().setData(
+                  CollectionPath().tokens,
+                  AuthService().getUid(),
+                  {"token": token, "id": AuthService().getUid()})
+            });
+      } else {
+        await Future<void>.delayed(
+          const Duration(
+            seconds: 3,
+          ),
+        );
+        apnsToken = await messaging.getAPNSToken();
+        if (apnsToken != null) {
+          messaging.getToken().then((token) => {
+                print("userToken: $token"),
+                FirestoreService().setData(
+                    CollectionPath().tokens,
+                    AuthService().getUid(),
+                    {"token": token, "id": AuthService().getUid()})
+              });
+        }
+      }
+    } else {
+      messaging.getToken().then((token) => {
+            print("userToken: $token"),
+            FirestoreService().setData(
+                CollectionPath().tokens,
+                AuthService().getUid(),
+                {"token": token, "id": AuthService().getUid()})
+          });
+    }
   }
 }
 

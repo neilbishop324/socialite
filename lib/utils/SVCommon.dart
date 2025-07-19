@@ -183,7 +183,7 @@ Widget svAppButton(
     onTap: onTap,
     elevation: 0,
     color: SVAppColorPrimary,
-    width: width ?? context.width() - 32,
+    width: width ?? ((context.width() - 32) > 0 ? (context.width() - 32) : 250),
     height: 56,
   );
 }
