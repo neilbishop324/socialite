@@ -1,14 +1,16 @@
-workflows: 
-  ios-release-no-shorebird: 
+workflows:
+  ios-release-no-shorebird:
     name: iOS Release
-    environment: 
-      flutter: stable 
-      xcode: latest 
-    scripts: 
-      - flutter pub get 
-      - flutter build ios --simulator 
-      - mkdir -p build/ios/ipa 
-      - cd build/ios/Build/Products/Debug-iphonesimulator 
-      - zip -r ../../../../ipa/Runner.app.zip Runner.app 
-    artifacts: 
+    environment:
+      flutter: stable
+      xcode: latest
+    scripts:
+      - flutter pub get
+      - flutter build ios --simulator
+      - mkdir -p build/ios/ipa
+      - |
+        APP_PATH=$(find build/ios -name "Runner.app" -type d | grep iphonesimulator | head -n 1)
+        echo "Found .app at: $APP_PATH"
+        zip -r build/ios/ipa/Runner.app.zip "$APP_PATH"
+    artifacts:
       - build/ios/ipa/Runner.app.zip
