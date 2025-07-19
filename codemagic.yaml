@@ -1,6 +1,13 @@
-workflows:
-  build:
-    scripts:
-      - flutter build ios --debug --no-codesign --no-sound-null-safety --build-name=1.0.0 --build-number=1
-    artifacts:
-      - build/ios/iphoneos/Runner.app
+workflows: 
+  ios-release-no-shorebird: 
+    name: iOS Release 
+    environment: 
+      flutter: stable 
+      xcode: latest 
+    scripts: 
+      - flutter pub get 
+      - flutter build ios --simulator 
+      - cd build/ios/iphonesimulator 
+      - zip -r ../../ipa/Runner.app.zip Runner.app 
+    artifacts: 
+      - build/ios/ipa/Runner.app.zip
